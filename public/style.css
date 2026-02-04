@@ -1,0 +1,479 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0f1419;
+    color: #e6edf3;
+    line-height: 1.6;
+}
+
+#app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 头部样式 */
+header {
+    text-align: center;
+    padding: 30px 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #30363d;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    color: #58a6ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #8b949e;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 表单区域 */
+.game-form {
+    background-color: #161b22;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 40px;
+    border: 1px solid #30363d;
+}
+
+.game-form h2 {
+    margin-bottom: 20px;
+    color: #58a6ff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #c9d1d9;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    color: #c9d1d9;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #58a6ff;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.image-upload-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.image-preview {
+    width: 100%;
+    max-height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+}
+
+.image-preview img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.hint {
+    font-size: 0.85rem;
+    color: #8b949e;
+    margin-top: 5px;
+}
+
+.hint a {
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+.hint a:hover {
+    text-decoration: underline;
+}
+
+.submit-btn {
+    background-color: #238636;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 14px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    grid-column: 1 / -1;
+    max-width: 200px;
+    margin: 10px auto 0;
+}
+
+.submit-btn:hover:not(:disabled) {
+    background-color: #2ea043;
+}
+
+.submit-btn:disabled {
+    background-color: #30363d;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* 游戏列表区域 */
+.games-section h2 {
+    margin-bottom: 25px;
+    color: #58a6ff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.games-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.game-card {
+    background-color: #161b22;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #30363d;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.game-header {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.game-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+}
+
+.game-info {
+    flex: 1;
+}
+
+.game-title {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: #c9d1d9;
+}
+
+.game-description {
+    color: #8b949e;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.game-link {
+    color: #58a6ff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.game-link:hover {
+    text-decoration: underline;
+}
+
+/* 游戏统计信息 */
+.game-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #30363d;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #8b949e;
+}
+
+.rating-display {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rating-stars {
+    display: flex;
+    gap: 2px;
+}
+
+.rating-stars i {
+    color: #30363d;
+    font-size: 1rem;
+}
+
+.rating-stars i.active {
+    color: #fbbf24;
+}
+
+.rating-value {
+    font-weight: 600;
+    color: #c9d1d9;
+}
+
+.rating-count {
+    font-size: 0.8rem;
+    color: #8b949e;
+}
+
+.overall-stat {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #0d1117;
+    border-radius: 8px;
+    margin-top: 5px;
+}
+
+.overall-rating {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fbbf24;
+}
+
+/* 评分表单 */
+.rating-form h4 {
+    margin-bottom: 15px;
+    color: #c9d1d9;
+    font-size: 1.1rem;
+}
+
+.rating-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.rating-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rating-input label {
+    color: #8b949e;
+    font-weight: 500;
+}
+
+.star-rating {
+    display: flex;
+    gap: 5px;
+}
+
+.star-rating i {
+    font-size: 1.3rem;
+    color: #30363d;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.star-rating i.fas.active {
+    color: #fbbf24;
+}
+
+.star-rating i:hover {
+    color: #fbbf24;
+}
+
+.rate-btn {
+    width: 100%;
+    background-color: #1f6feb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.rate-btn:hover:not(:disabled) {
+    background-color: #2a7dee;
+}
+
+.rate-btn:disabled {
+    background-color: #30363d;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* 空状态 */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #8b949e;
+}
+
+.empty-state i {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: #30363d;
+}
+
+.empty-state p {
+    font-size: 1.2rem;
+}
+
+/* 页脚 */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+    border-top: 1px solid #30363d;
+    color: #8b949e;
+    font-size: 0.9rem;
+}
+
+.deploy-info {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* 通知 */
+.notification {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #238636;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+    z-index: 1000;
+}
+
+.notification.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.notification i {
+    font-size: 1.2rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .games-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .game-header {
+        flex-direction: column;
+    }
+    
+    .game-image {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .game-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .rating-input {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
